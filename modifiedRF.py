@@ -76,7 +76,7 @@ class MRF:
         file2.to_csv(self.file_safe_pos_name + 'freq.csv')
 
     def run_nofreq(self, bootstrap_rounds, permuted_rounds, ranks):
-        ct_genes_score = self.df.iloc[:, [0, -3]]
+        ct_genes_score = self.df
         ct_genes_score.columns = ['gene', 'score']
         new_gene_score = ct_genes_score.copy()
         new_gene_score.columns = ['gene', 'permuted score']
