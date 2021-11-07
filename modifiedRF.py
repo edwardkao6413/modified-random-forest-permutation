@@ -21,7 +21,7 @@ class MRF:
 
     def run(self, bootstrap_rounds, permuted_rounds, ranks):
         bootstrap_genes_record = []
-        ct_genes_score = self.df.iloc[:, [0, -3]]
+        ct_genes_score = self.df
         ct_genes_score.columns = ['gene', 'score']
         new_gene_score = ct_genes_score.copy()
         new_gene_score.columns = ['gene', 'permuted score']
@@ -69,8 +69,8 @@ class MRF:
         file2 = pd.DataFrame()
         file2['gene'] = gene2
         file2['frequency'] = frequency
-        all_result.to_csv(self.file_safe_pos_name + ' boots.csv')
-        file2.to_csv(self.file_safe_pos_name + ' freq.csv')
+        all_result.to_csv(self.file_safe_pos_name + 'boots.csv')
+        file2.to_csv(self.file_safe_pos_name + 'freq.csv')
 
     def run_nofreq(self, bootstrap_rounds, permuted_rounds, ranks):
         ct_genes_score = self.df.iloc[:, [0, -3]]
@@ -108,5 +108,5 @@ class MRF:
         all_result = pd.DataFrame()
         all_result['gene'] = list(boots_over_permute_times.keys())
         all_result['boots over times'] = list(boots_over_permute_times.values())
-        all_result.to_csv(self.file_safe_pos_name + ' boots.csv')
+        all_result.to_csv(self.file_safe_pos_name + 'boots.csv')
 
