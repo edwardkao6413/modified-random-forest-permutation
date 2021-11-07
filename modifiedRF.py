@@ -3,7 +3,7 @@ class helps:
         pass
 
     def __str__(self):
-        return 'You need other packages to run it. Using .Need_packages to see the package requirements.'
+        return 'You need other packages to run it. Using .packages to see the package requirements.'
 
 
 class packages:
